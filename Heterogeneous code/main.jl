@@ -22,8 +22,7 @@ The key differences for this heterogenous individuals implementation:
         general case with multiple paramters.
     - Approximating the value function can be done in 2 ways: store value function iterations
     for each individual, or store a random individual's value at each iteration in a shared
-    set of value functions. I employ the second method since it's easier to implement and
-    computationally faster.
+    set of value functions. I employ the first method.
 =#
 
 # Packages.
