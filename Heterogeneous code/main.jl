@@ -10,7 +10,7 @@ The key differences for this heterogenous individuals implementation:
     for parameters that vary over individuals. These parameters are draw in Section 0.
     and are incorporated in Section 1. when creating the simulated dataset.
     - Various functions are modified to accomodate changes in individual parameters. Each
-    now accepts and "individual index" parameter to know which individual-specific parameters
+    now accepts an "individual index" parameter to know which individual-specific parameters
     to use when performing choice calculations.
         - Solve_Individual_Problem
         - Likelihood function
