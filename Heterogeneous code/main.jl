@@ -17,9 +17,6 @@ The key differences for this heterogenous individuals implementation:
     - The IJC algorithm is modified to draw the population parameters for heterogenous 
     individuals (mean and variance of G) by Gibbs sampling, and to draw other parameters
     (individual G values, and population α, γ, and β values) by random walk Metropolis-Hastings.
-        - Only one parameter is heterogenous in this setup (reward for store 3). This 
-        simplifies the conditional distributions in the Gibbs sampling compared to the more
-        general case with multiple paramters.
     - Approximating the value function can be done in 2 ways: store value function iterations
     for each individual, or store a random individual's value at each iteration in a shared
     set of value functions. I employ the first method.
@@ -276,8 +273,8 @@ for n_draw in 2:θ_draws
     θ_proposed_individual = deepcopy(θ_all[n_draw])
 
     # Draw separately for all individuals.
-    Threads.@threads for individual_index in 1:n_individuals
-    #for individual_index in 1:n_individuals
+    Threads.@threads for individual_index in 1:n_individuals   # parallel implementation
+    #for individual_index in 1:n_individuals                   # serial implementation
         
         # Calculate the sample log likelihood and log prior for the previous draw.
         Log_L_Y_θ_previous_i = Log_Sample_Likelihood(Dataset, Environment, θ_all[n_draw],
