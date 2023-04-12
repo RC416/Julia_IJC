@@ -190,7 +190,7 @@ function Solve_Individual_Problem(individual_index, starting_state_index, V, Mod
         # Variable to store the value of the alternative-specific value functions.
         Emaxᵢ = 0.0
         
-        # Go though each allowed next state.
+        # Go through each allowed next state.
         for choice_index in eachindex(state_choices)
 
             # Get the corresponding product, state choice, and whether gift is earned.
